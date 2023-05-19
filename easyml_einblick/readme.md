@@ -1,4 +1,5 @@
 # Easily create ML models! 
+## Quickstart
 In a few quick steps, you can train ML models. 
 
 ```python 
@@ -35,3 +36,19 @@ ml.get_model()
 ml.get_fit_model()
 
 ```
+
+## Scoring 
+### Classification Scoring Metrics:
+'accuracy': Classification accuracy.
+'f1': F1 score, the harmonic mean of precision and recall.
+'precision': Precision, the proportion of true positives to the sum of true and false positives.
+'recall': Recall, the proportion of true positives to the sum of true positives and false negatives.
+'roc_auc': Area under the receiver operating characteristic curve.
+
+### Regression Scoring Metrics:
+'neg_mean_squared_error': Negative mean squared error.
+'neg_mean_absolute_error': Negative mean absolute error.
+'r2': R-squared coefficient of determination.
+You can select the desired scoring metric by specifying it as the value of the scoring parameter when initializing TPOT. For example, if you want to use accuracy as the scoring metric for classification, you can set scoring='accuracy' when creating the TPOTClassifier object.
+
+
