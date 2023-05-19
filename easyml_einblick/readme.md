@@ -1,13 +1,11 @@
 # Easily create ML models! 
 In a few quick steps, you can train ML models. 
 
-To install, simply run two pip commands (one to get the dependencies, and one to get the functions): 
-`!pip install -r https://github.com/einblick-ai/helpful-functions/raw/main/easyml-einblick/requirements.txt`
-
-
+To install, simply run a pip 
+`!pip install git+https://github.com/einblick-ai/helpful-functions.git#subdirectory=easyml_einblick`
 
 First, instantiate the ML object: 
-`ml = automllite(df,"Accepted",0.5,"regress")`
+`ml = easyml_einblick(df,"Accepted",0.5,"regress")`
 
 Then, trigger data preprocessing:
 `ml.preprocess()`
@@ -18,5 +16,5 @@ You can then start model training:
 Get explainability: 
 `ml.explain()`
 
-And apply the model: 
+And apply the model to a new dataframe: 
 `ml.apply_model(df2)`
