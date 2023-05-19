@@ -1,2 +1,2 @@
-# helpful-functions
-A public repository of code that we wrote and deployed for you!
+# Helpful Functions
+This is a public repository of code that we wrote for you to help you out! 
