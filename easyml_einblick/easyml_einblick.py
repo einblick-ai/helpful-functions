@@ -1,4 +1,4 @@
-class easyML_einblick:
+class easyml_einblick:
     
     def __init__(self, df, target, search_time, isClassifyOrRegression):
         """
