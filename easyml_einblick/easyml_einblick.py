@@ -1,6 +1,6 @@
 class easyml_einblick:
     
-    def __init__(self, df, target, search_time, isClassifyOrRegression):
+    def __init__(self, df, target, search_time, isClassifyOrRegression, metric = None):
         """
         This constructor creates:
         - X: Input DataFrame containing the features.
@@ -13,6 +13,7 @@ class easyml_einblick:
         self.isClassifyOrRegression = isClassifyOrRegression
         self.search_time = search_time 
         self.target = target 
+        self.metric = metric 
     
     
     #######
@@ -36,9 +37,13 @@ class easyml_einblick:
         Returns: fit_model: Trained model object.
         """   
         if self.isClassifyOrRegression.startswith("class"):
-            self.model, self.fit_model = self.train_classifier(self.X_p, self.y, self.search_time)
+            if self.metric == None: 
+                self.metric = 'accuracy'
+            self.model, self.fit_model = self.train_classifier(self.X_p, self.y, self.search_time, self.metric)
         elif self.isClassifyOrRegression.startswith("regress"):
-            self.model, self.fit_model = self.train_regressor(self.X_p, self.y, self.search_time)
+            if self.metric == None: 
+                self.metric = 'neg_mean_absolute_error'
+            self.model, self.fit_model = self.train_regressor(self.X_p, self.y, self.search_time, self.metric)
         else:
             raise ValueError("Invalid problem type. Must select 'classification' or 'regression'")
     
