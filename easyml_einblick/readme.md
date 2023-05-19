@@ -21,3 +21,17 @@ ml.explain()
 ml.apply_model(df2)
 
 ```
+
+You can also quickly extract all of the pipeline components once the model is trained:
+
+```Python
+## Preprocessing steps (label encoding, date to int, etc...)
+ml.get_preprocessing_pipeline()
+
+## XGBoost model not fitted to data
+ml.get_model()
+
+## XGBoost model fitted to training data
+ml.get_fit_model()
+
+```
