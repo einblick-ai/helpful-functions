@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='easyml-einblick',
+    name='easyml_einblick',
     version='1.0',
     py_modules=['easyml_einblick'],
     install_requires=[
