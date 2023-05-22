@@ -231,4 +231,4 @@ class easyml_einblick:
         shap.summary_plot(self.shap_values, X_sample, plot_type='bar', max_display=50)
     
     def returnShapExplainer(self): 
-        return self.explainer()
+        return self.explainer
