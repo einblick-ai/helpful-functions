@@ -222,7 +222,10 @@ class easyml_einblick:
          
     def displayShap(self, X, model):
         import shap
-        X_sample = X.sample(100)
+        if len(X) > 100:
+            X_sample = X.sample(100)
+        else:
+            X_sample = X
         explainer = shap.Explainer(model, X_sample)
         shap_values = explainer(X_sample)
         shap.summary_plot(shap_values, X_sample, plot_type='bar', max_display=50)
