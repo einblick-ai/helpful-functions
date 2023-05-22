@@ -226,6 +226,9 @@ class easyml_einblick:
             X_sample = X.sample(100)
         else:
             X_sample = X
-        explainer = shap.Explainer(model, X_sample)
-        shap_values = explainer(X_sample)
-        shap.summary_plot(shap_values, X_sample, plot_type='bar', max_display=50)
+        self.explainer = shap.Explainer(model, X_sample)
+        self.shap_values = self.explainer(X_sample)
+        shap.summary_plot(self.shap_values, X_sample, plot_type='bar', max_display=50)
+    
+    def returnShapExplainer(self): 
+        return self.explainer()
