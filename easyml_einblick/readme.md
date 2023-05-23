@@ -3,8 +3,9 @@
 In a few quick steps, you can train ML models. 
 
 ```python 
-## Install
+## Install and import
 !pip install git+https://github.com/einblick-ai/helpful-functions.git#subdirectory=easyml_einblick
+from easyml_einblick import easyml_einblick 
 
 ## First, instantiate the ML object with input parameters (dataframe, name_of_target_variable, how_long_to_search, regression_or_classification) 
 ml = easyml_einblick(df,"Accepted",0.5,"regression")
