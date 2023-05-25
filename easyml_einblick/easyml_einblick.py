@@ -191,7 +191,7 @@ class easyml_einblick:
         return model, fit_model  
 
     def train_regressor(self, X, y, search_time = 1, scoring='neg_mean_absolute_error'):
-        from tpot import TPOTClassifier
+        from tpot import TPOTRegressor
         import xgboost 
         
         from xgboost import XGBRegressor
@@ -207,7 +207,7 @@ class easyml_einblick:
         }
 
         print('Beginning model training! /n')
-        tpot = TPOTClassifier(generations=5, population_size=50, config_dict = config_dict,  max_time_mins=search_time, verbosity=0, scoring=scoring, random_state=42)
+        tpot = TPOTRegressor(generations=5, population_size=50, config_dict = config_dict,  max_time_mins=search_time, verbosity=0, scoring=scoring, random_state=42)
 
         # Fit TPOT on the training data
         tpot.fit(X, y)
