@@ -162,7 +162,7 @@ class easyml_einblick:
 
         return self.fit_preprocessing_pipeline, pd.DataFrame(preprocessing_pipeline.fit_transform(df), columns = df.columns)
         
-    def train_classifier(self, X, y, search_time = 1, scoring = 'accuracy'):
+    def train_classifier(self, X, y, search_time = 0.5, scoring = 'accuracy'):
         from tpot import TPOTClassifier
         import xgboost 
         from xgboost import XGBClassifier
@@ -190,7 +190,7 @@ class easyml_einblick:
         fit_model = model.fit(X,y)
         return model, fit_model  
 
-    def train_regressor(self, X, y, search_time = 1, scoring='neg_mean_absolute_error'):
+    def train_regressor(self, X, y, search_time = 0.5, scoring='neg_mean_absolute_error'):
         from tpot import TPOTRegressor
         import xgboost 
         
