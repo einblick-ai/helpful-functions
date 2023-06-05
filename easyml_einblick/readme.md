@@ -37,6 +37,9 @@ ml.get_model()
 ml.get_fit_model()
 
 ```
+## More Details 
+For preprocessing, we take care of text, datetime, and numeric columns in a simple way -- impute nulls, do ordinal encoding, convert dates to float, etc... creating a sklearn pipeline object. 
+For ML model training, we use TPOT to do AutoML search, building XGBoostClassifer/Regressor pipelines. 
 
 ## Scoring 
 ### Classification Scoring Metrics:
