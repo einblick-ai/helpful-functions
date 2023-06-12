@@ -118,7 +118,7 @@ class easyml_einblick:
         import pandas as pd
         from sklearn.base import BaseEstimator, TransformerMixin
 
-        numeric_cols = df.select_dtypes(include=['int', 'float','bool']).columns.tolist()
+        numeric_cols = df.select_dtypes(include=['int', 'number','float','bool']).columns.tolist()
         date_cols = df.select_dtypes(include=['datetime64']).columns.tolist()
         string_cols = df.select_dtypes(include=['object','string']).columns.tolist()
 
