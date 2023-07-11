@@ -27,8 +27,8 @@ def dataframe_summary(df):
     result_series = df.apply(lambda x: x.value_counts().index[:3]).values 
     arr_str = np.array([', '.join(map(str, el)) for el in result_series], dtype='object')
     summary['Top 3 Common'] = arr_str
-    summary['90th Percentile'] = df.apply(lambda x: np.percentile(x.astype(int), 90) if x.dtype != 'object' else np.nan).values 
-    summary['10th Percentile'] = df.apply(lambda x: np.percentile(x.astype(int), 10) if x.dtype != 'object' else np.nan).values
+    summary['90th Percentile'] = df.apply(lambda x: np.percentile(x.astype(float), 90) if x.dtype != 'object' else np.nan).values 
+    summary['10th Percentile'] = df.apply(lambda x: np.percentile(x.astype(float), 10) if x.dtype != 'object' else np.nan).values
 
     return summary
 
