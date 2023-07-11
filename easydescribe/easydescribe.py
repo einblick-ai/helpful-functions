@@ -1,6 +1,3 @@
-!pip install tabulate
-import pandas as pd
-
 def dataframe_summary(df):    
     summary = pd.DataFrame()
     summary['Column'] = df.columns
