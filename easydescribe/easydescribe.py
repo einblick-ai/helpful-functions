@@ -1,4 +1,7 @@
+
 def dataframe_summary(df):    
+    import pandas as pd
+    import numpy as np
     summary = pd.DataFrame()
     summary['Column'] = df.columns
     summary['Data Type'] = df.dtypes.astype(str).values
@@ -30,6 +33,8 @@ def dataframe_summary(df):
     return summary
 
 def dataframe_summary_markdown(df):    
+    import pandas as pd
+    import numpy as np
     summary = pd.DataFrame()
     summary['Column'] = df.columns
     summary['Data Type'] = df.dtypes.astype(str).values
